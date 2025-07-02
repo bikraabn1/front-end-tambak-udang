@@ -18,7 +18,7 @@ const DissolvedOxygenDetailsSkeleton = () => {
               Latest Measurements
             </Text>
             <ScrollArea>
-              <Table striped={true} withTableBorder>
+              <Table striped="true" withTableBorder>
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>No</Table.Th>
@@ -41,7 +41,7 @@ const DissolvedOxygenDetailsSkeleton = () => {
 
       <h2 className='font-semibold text-xl mt-25 mb-5 text-white'>Indicator</h2>
       <div className='bg-zinc-800 p-2 flex items-center justify-center rounded md'>
-        <Table stripped={true} withTableBorder withColumnBorders>
+        <Table stripped="true" withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
               <Table.Th>Dissolved Oxygen Rate</Table.Th>

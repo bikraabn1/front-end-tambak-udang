@@ -1,18 +1,7 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
-import Chart from '../../components/Chart'
-import { Paper, Text, ScrollArea, Table } from '@mantine/core'
-import TotalDissolvedSolidSkeleton from './TotalDissolvedSolidSkeleton'
+import React from 'react'
+import { Paper, Text, ScrollArea, Table, Skeleton } from '@mantine/core'
 
-const TotalDissolvedSolidDetails = () => {
-  const { data } = useContext(DataContext)
-
-  if (!data || data.length < 10) {
-    return <TotalDissolvedSolidSkeleton />;
-  }
-
-  const dataForChart = data.slice(-10)
-
+const TotalDissolvedSolidSkeleton = () => {
   return (
     <>
       <div className='h-[72.75vh]'>
@@ -22,7 +11,7 @@ const TotalDissolvedSolidDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Total Dissolved Solid Trend
             </Text>
-            <Chart data={dataForChart} dataKey="tds" stroke='#D50B8B'/>
+            <Skeleton h="91%" radius="md" />
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -37,10 +26,10 @@ const TotalDissolvedSolidDetails = () => {
                   </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>
-                  {dataForChart.map((item, i) => (
+                  {Array.from({ length: 10 }).map((_, i) => (
                     <Table.Tr key={i}>
                       <Table.Td>{i + 1}</Table.Td>
-                      <Table.Td className='text-end'>{item.tds}</Table.Td>
+                      <Table.Td className='text-end'>Load</Table.Td>
                     </Table.Tr>
                   ))}
                 </Table.Tbody>
@@ -91,4 +80,4 @@ const TotalDissolvedSolidDetails = () => {
   )
 }
 
-export default TotalDissolvedSolidDetails
+export default TotalDissolvedSolidSkeleton

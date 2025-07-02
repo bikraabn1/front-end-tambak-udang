@@ -1,28 +1,17 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
-import Chart from '../../components/Chart'
-import { Paper, Text, ScrollArea, Table } from '@mantine/core'
-import PotentialOfHydrogenSkeleton from './PotentialOfHydrogenSkeleton'
+import React from 'react'
+import { Paper, Text, ScrollArea, Table, Skeleton } from '@mantine/core'
 
-const PotentialOfHydrogenDetails = () => {
-  const { data } = useContext(DataContext)
-
-  if (!data || data.length < 10) {
-    return <PotentialOfHydrogenSkeleton />;
-  }
-
-  const dataForChart = data.slice(-10)
-
+const PotentialOfHydrogenSkeleton = () => {
   return (
     <>
       <div className='h-[72.75vh]'>
-        <h2 className='font-semibold mb-5 text-xl text-white'>Potential Of Hydrogen(pH)</h2>
+        <h2 className='font-semibold mb-5 text-xl text-white'>Potential of Hydrogen(pH)</h2>
         <div className="grid md:grid-cols-2 mb-12 gap-5">
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={10} weight={500}>
-              Potential Of Hydrogen Trend
+              Potential of Hydrogen(pH) Trend
             </Text>
-            <Chart data={dataForChart} dataKey="ph" domain={[0, 14]} stroke='#8DD8FF'/>
+            <Skeleton h="91%" radius="md" />
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -33,14 +22,14 @@ const PotentialOfHydrogenDetails = () => {
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>No</Table.Th>
-                    <Table.Th className='w-full flex justify-end'>Potential Of Hydrogen(pH)</Table.Th>
+                    <Table.Th className='w-full flex justify-end'>Potential of Hydrogen(pH)</Table.Th>
                   </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>
-                  {dataForChart.map((item, i) => (
+                  {Array.from({ length: 10 }).map((_, i) => (
                     <Table.Tr key={i}>
                       <Table.Td>{i + 1}</Table.Td>
-                      <Table.Td className='text-end'>{item.ph}</Table.Td>
+                      <Table.Td className='text-end'>Load</Table.Td>
                     </Table.Tr>
                   ))}
                 </Table.Tbody>
@@ -91,4 +80,4 @@ const PotentialOfHydrogenDetails = () => {
   )
 }
 
-export default PotentialOfHydrogenDetails
+export default PotentialOfHydrogenSkeleton

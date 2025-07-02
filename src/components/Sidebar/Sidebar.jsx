@@ -10,6 +10,7 @@ import { IoIosWater } from "react-icons/io";
 import { CgGlassAlt } from "react-icons/cg";
 import { TbTemperatureSun } from "react-icons/tb";
 import { MdWater } from "react-icons/md";
+import { useLocation } from 'react-router-dom'
 
 const collections = [
     {
@@ -45,6 +46,8 @@ const collections = [
 ];
 
 export default function Sidebar() {
+    const pathname = useLocation()
+    console.log(pathname)
 
     const collectionLinks = collections.map((collection) => (
         <NavLink
