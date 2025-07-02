@@ -46,21 +46,29 @@ export default function DashboardSkeleton() {
             <Paper mt="md" p="md" radius="md" withBorder>
                 <Text size="lg" weight={500} mb="sm">Data Table</Text>
                 <ScrollArea>
-                    <Table striped highlightOnHover>
-                        <thead>
-                            <tr>
-                                <th>Kolom 1</th>
-                                <th>Kolom 2</th>
-                                <th>Kolom 3</th>
-                            </tr>
-                        </thead>
+                    <Table striped withTableBorder>
+                        <Table.Thead>
+                            <Table.Tr>
+                                <Table.Th>No</Table.Th>
+                                <Table.Th>Total Dissolve Solids</Table.Th>
+                                <Table.Th>Potential of Hydrogen(pH)</Table.Th>
+                                <Table.Th>Salinity</Table.Th>
+                                <Table.Th>Temperature</Table.Th>
+                                <Table.Th>Dissolved Oxygen</Table.Th>
+                                <Table.Th>Color</Table.Th>
+                            </Table.Tr>
+                        </Table.Thead>
                         <tbody>
                             {Array.from({ length: 10 }).map((_, i) => (
-                                <tr key={i}>
-                                    <td>Baris {i + 1} - A</td>
-                                    <td>Baris {i + 1} - B</td>
-                                    <td>Baris {i + 1} - C</td>
-                                </tr>
+                                <Table.Tr key={i}>
+                                    <Table.Td>Baris {i + 1} - A</Table.Td>
+                                    <Table.Td>Baris {i + 1} - B</Table.Td>
+                                    <Table.Td>Baris {i + 1} - C</Table.Td>
+                                    <Table.Td>Baris {i + 1} - D</Table.Td>
+                                    <Table.Td>Baris {i + 1} - E</Table.Td>
+                                    <Table.Td>Baris {i + 1} - F</Table.Td>
+                                    <Table.Td>Baris {i + 1} - G</Table.Td>
+                                </Table.Tr>
                             ))}
                         </tbody>
                     </Table>

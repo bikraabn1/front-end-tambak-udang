@@ -5,6 +5,11 @@ import {
 import { NavLink } from 'react-router'
 import classes from './Sidebar.module.css';
 import { IoHome } from 'react-icons/io5'
+import { SiOxygen } from "react-icons/si";
+import { IoIosWater } from "react-icons/io";
+import { CgGlassAlt } from "react-icons/cg";
+import { TbTemperatureSun } from "react-icons/tb";
+import { MdWater } from "react-icons/md";
 
 const collections = [
     {
@@ -13,27 +18,27 @@ const collections = [
         link: '/'
     },
     {
-        icon: <IoHome/>,
+        icon: <SiOxygen/>,
         label: 'Dissolved Oxygen',
         link: "/do-details"
     },
     {
-        icon: <IoHome/>,
+        icon: <IoIosWater />,
         label: 'Potential of Hydrogen(pH)',
         link: '/ph-details'
     },
     {
-        icon: <IoHome/>,
+        icon: <CgGlassAlt />,
         label: 'Salinity',
         link: '/sal-details'
     },
     {
-        icon: <IoHome/>,
+        icon: <TbTemperatureSun />,
         label: 'Temperature',
         link: '/temp-details'
     },
     {
-        icon: <IoHome/>,
+        icon: <MdWater/>,
         label: 'Total Dissolved Solids',
         link: '/tds-details'
     },

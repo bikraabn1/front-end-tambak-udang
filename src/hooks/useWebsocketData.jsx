@@ -42,7 +42,7 @@ const useWebsocketData = (url, maxItem = 100) => {
                 }
             }
 
-            socket.onclose = (event) => {
+            socket.onclose = () => {
                 setIsConnected(false)
 
                 if (reconnectAttempts < maxReconnectAttempts) {

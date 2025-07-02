@@ -2,45 +2,45 @@ import React, { useContext } from 'react'
 import { DataContext } from '../../context/DataContext'
 import Chart from '../../components/Chart'
 import { Paper, Text, ScrollArea, Table } from '@mantine/core'
-import DissolvedOxygenDetailsSkeleton from './DissolvedOxygenDetailsSkeleton'
+// import SalinityDetailsSkeleton from './SalinityDetailsSkeleton'
 
-const DissolvedOxygenDetails = () => {
+const SalinityDetails = () => {
   const { data } = useContext(DataContext)
 
-  if (!data || data.length < 10) {
-    return <DissolvedOxygenDetailsSkeleton />;
-  }
+  // if (!data || data.length < 10) {
+  //   return <SalinityDetailsSkeleton />;
+  // }
 
   const dataForChart = data.slice(-10)
 
   return (
     <>
       <div className='h-[72.75vh]'>
-        <h2 className='font-semibold mb-5 text-xl text-white'>Dissolved Oxygen</h2>
+        <h2 className='font-semibold mb-5 text-xl text-white'>Salinity</h2>
         <div className="grid md:grid-cols-2 mb-12 gap-5">
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={10} weight={500}>
-              Dissolved Oxygen Trend
+              Salinity Trend
             </Text>
-            <Chart data={dataForChart} dataKey="doValue" domain={[0, 14]}/>
+            <Chart data={dataForChart} dataKey="sal" />
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
               Latest Measurements
             </Text>
             <ScrollArea>
-              <Table striped withTableBorder>
+              <Table striped={true} withTableBorder>
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>No</Table.Th>
-                    <Table.Th className='w-full flex justify-end'>Dissolved Oxygen</Table.Th>
+                    <Table.Th className='w-full flex justify-end'>Salinity</Table.Th>
                   </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>
                   {dataForChart.map((item, i) => (
                     <Table.Tr key={i}>
                       <Table.Td>{i + 1}</Table.Td>
-                      <Table.Td className='text-end'>{item.doValue}</Table.Td>
+                      <Table.Td className='text-end'>{item.sal}</Table.Td>
                     </Table.Tr>
                   ))}
                 </Table.Tbody>
@@ -55,7 +55,7 @@ const DissolvedOxygenDetails = () => {
         <Table stripped withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
-              <Table.Th>Dissolved Oxygen Rate</Table.Th>
+              <Table.Th>Salinity Rate</Table.Th>
               <Table.Th>Impact on Shrimp</Table.Th>
             </Table.Tr>
           </Table.Thead>
@@ -83,12 +83,12 @@ const DissolvedOxygenDetails = () => {
           </Table.Tbody>
         </Table>
       </div>
-      <h2 className='font-semibold text-xl my-5 text-white'>What is Dissolved Oxygen?</h2>
+      <h2 className='font-semibold text-xl my-5 text-white'>What is Salinity?</h2>
       <p className='bg-zinc-800 rounded-sm p-2'>
-        <span className='m-5'></span><strong>Dissolved oxygen (DO)</strong> refers to the concentration of oxygen gas that is present in a liquid, most commonly water, and is not chemically bonded to other elements. It's a crucial indicator of water quality and is essential for the survival of aquatic organisms.
+        <span className='m-5'></span><strong>Salinity </strong> refers to the concentration of oxygen gas that is present in a liquid, most commonly water, and is not chemically bonded to other elements. It's a crucial indicator of water quality and is essential for the survival of aquatic organisms.
       </p>
     </>
   )
 }
 
-export default DissolvedOxygenDetails
+export default SalinityDetails

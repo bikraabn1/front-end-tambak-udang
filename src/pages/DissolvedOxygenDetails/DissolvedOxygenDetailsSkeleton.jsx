@@ -1,18 +1,7 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../../context/DataContext'
-import Chart from '../../components/Chart'
-import { Paper, Text, ScrollArea, Table } from '@mantine/core'
-import DissolvedOxygenDetailsSkeleton from './DissolvedOxygenDetailsSkeleton'
+import React from 'react'
+import { Paper, Text, ScrollArea, Table, Skeleton } from '@mantine/core'
 
-const DissolvedOxygenDetails = () => {
-  const { data } = useContext(DataContext)
-
-  if (!data || data.length < 10) {
-    return <DissolvedOxygenDetailsSkeleton />;
-  }
-
-  const dataForChart = data.slice(-10)
-
+const DissolvedOxygenDetailsSkeleton = () => {
   return (
     <>
       <div className='h-[72.75vh]'>
@@ -22,14 +11,14 @@ const DissolvedOxygenDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Dissolved Oxygen Trend
             </Text>
-            <Chart data={dataForChart} dataKey="doValue" domain={[0, 14]}/>
+            <Skeleton h="91%" radius="md"/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
               Latest Measurements
             </Text>
             <ScrollArea>
-              <Table striped withTableBorder>
+              <Table striped={true} withTableBorder>
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>No</Table.Th>
@@ -37,10 +26,10 @@ const DissolvedOxygenDetails = () => {
                   </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>
-                  {dataForChart.map((item, i) => (
+                  {Array.from({ length: 10 }).map((_, i) => (
                     <Table.Tr key={i}>
                       <Table.Td>{i + 1}</Table.Td>
-                      <Table.Td className='text-end'>{item.doValue}</Table.Td>
+                      <Table.Td className='text-end'>Load</Table.Td>
                     </Table.Tr>
                   ))}
                 </Table.Tbody>
@@ -52,7 +41,7 @@ const DissolvedOxygenDetails = () => {
 
       <h2 className='font-semibold text-xl mt-25 mb-5 text-white'>Indicator</h2>
       <div className='bg-zinc-800 p-2 flex items-center justify-center rounded md'>
-        <Table stripped withTableBorder withColumnBorders>
+        <Table stripped={true} withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
               <Table.Th>Dissolved Oxygen Rate</Table.Th>
@@ -91,4 +80,4 @@ const DissolvedOxygenDetails = () => {
   )
 }
 
-export default DissolvedOxygenDetails
+export default DissolvedOxygenDetailsSkeleton

@@ -53,30 +53,30 @@ export default function Dashboard() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[320px] gap-5 mt-5'>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Dissolved Oxygen</Text>
-          <Chart data={dataForChart} dataKey="doValue" />
+          <Chart data={dataForChart} dataKey="doValue" domain={[0, 14]}/>
         </Paper>
 
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Potential of Hydrogen(pH)</Text>
-          <Chart data={dataForChart} dataKey="ph" />
+          <Chart data={dataForChart} dataKey="ph" domain={[0, 14]}/>
         </Paper>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Salinity</Text>
-          <Chart data={dataForChart} dataKey="sal" />
+          <Chart data={dataForChart} dataKey="sal" domain={[0, 50]}/>
         </Paper>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Temperature</Text>
-          <Chart data={dataForChart} dataKey="temp" />
+          <Chart data={dataForChart} dataKey="temp" domain={[0, 40]}/>
         </Paper>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Total Dissolved Solids</Text>
-          <Chart data={dataForChart} dataKey="tds" />
+          <Chart data={dataForChart} dataKey="tds" domain={[0, 300]}/>
         </Paper>
       </div>
 
       <h3 className='mt-5 font-semibold'>Data Table</h3>
       <Paper mt="md" p="md" radius="md" withBorder>
-        <Text size="lg" weight={500} mb="sm">Data Table</Text>
+        <Text size="lg" weight={500} mb="sm">Stats Table</Text>
         <ScrollArea>
           <Table striped withTableBorder>
             <Table.Thead>
@@ -100,7 +100,7 @@ export default function Dashboard() {
                 <Table.Td>{data.temp}</Table.Td>
                 <Table.Td>{data.doValue}</Table.Td>
                 <Table.Td>
-                  <div className={`rounded-full w-10 h-10`} style={{ backgroundColor: `#${data.color}` }}></div>
+                  <div className={`rounded-full w-5 h-5`} style={{ backgroundColor: `#${data.color}` }}></div>
                 </Table.Td>
               </Table.Tr>
               ))}
