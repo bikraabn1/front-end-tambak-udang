@@ -22,7 +22,7 @@ const TotalDissolvedSolidDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Total Dissolved Solid Trend
             </Text>
-            <Chart data={dataForChart} dataKey="tds" />
+            <Chart data={dataForChart} dataKey="tds" stroke='#D50B8B'/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -83,9 +83,9 @@ const TotalDissolvedSolidDetails = () => {
           </Table.Tbody>
         </Table>
       </div>
-      <h2 className='font-semibold text-xl my-5 text-white'>What is TotalDissolvedSolid?</h2>
+      <h2 className='font-semibold text-xl my-5 text-white'>What is Total Dissolved Solid?</h2>
       <p className='bg-zinc-800 rounded-sm p-2'>
-        <span className='m-5'></span><strong>TotalDissolvedSolid </strong> refers to the concentration of oxygen gas that is present in a liquid, most commonly water, and is not chemically bonded to other elements. It's a crucial indicator of water quality and is essential for the survival of aquatic organisms.
+        <span className='m-5'></span><strong>Total Dissolved Solid </strong> refers to the concentration of oxygen gas that is present in a liquid, most commonly water, and is not chemically bonded to other elements. It's a crucial indicator of water quality and is essential for the survival of aquatic organisms.
       </p>
     </>
   )

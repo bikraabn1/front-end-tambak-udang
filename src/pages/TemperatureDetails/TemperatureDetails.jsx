@@ -22,7 +22,7 @@ const TemperatureDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Temperature Trend
             </Text>
-            <Chart data={dataForChart} dataKey="temp" domain={[0, 40]} />
+            <Chart data={dataForChart} dataKey="temp" domain={[0, 40]} stroke='#FFE99A'/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -84,7 +84,7 @@ const TemperatureDetails = () => {
           </Table.Tbody>
         </Table>
       </div>
-      
+
       <h2 className='font-semibold text-xl my-5 text-white'>What is Temperature?</h2>
       <p className='bg-zinc-800 rounded-sm p-2'>
         <span className='m-5'></span><strong>Temperature </strong> is a physical quantity that quantitatively expresses the attribute of hotness or coldness. Temperature is measured with a thermometer.

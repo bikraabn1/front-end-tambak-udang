@@ -22,7 +22,7 @@ const SalinityDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Salinity Trend
             </Text>
-            <Chart data={dataForChart} dataKey="sal" domain={[0, 50]}/>
+            <Chart data={dataForChart} dataKey="sal" domain={[0, 50]} stroke='#B6F500'/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>

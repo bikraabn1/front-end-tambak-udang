@@ -22,7 +22,7 @@ const PotentialOfHydrogenDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Potential Of Hydrogen Trend
             </Text>
-            <Chart data={dataForChart} dataKey="ph" domain={[0, 14]}/>
+            <Chart data={dataForChart} dataKey="ph" domain={[0, 14]} stroke='#3B13BFF'/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>

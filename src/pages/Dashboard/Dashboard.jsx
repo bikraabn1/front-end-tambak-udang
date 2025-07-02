@@ -19,6 +19,14 @@ export default function Dashboard() {
 
   const dataForStats = data.slice(-1)
   const dataForChart = data.slice(-10)
+
+  const strokeColorsForChart = [
+    '#ED3500',
+    '#8DD8FF',
+    '#B6F500',
+    '#FFE99A',
+    '#D50B8B',
+  ]
   return (
     <div>
       <h3 className='font-semibold mb-5'>Stats</h3>
@@ -53,24 +61,27 @@ export default function Dashboard() {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[320px] gap-5 mt-5'>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Dissolved Oxygen</Text>
-          <Chart data={dataForChart} dataKey="doValue" domain={[0, 14]}/>
+          <Chart data={dataForChart} dataKey="doValue" domain={[0, 14]} stroke={strokeColorsForChart[0]}/>
         </Paper>
 
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Potential of Hydrogen(pH)</Text>
-          <Chart data={dataForChart} dataKey="ph" domain={[0, 10]}/>
+          <Chart data={dataForChart} dataKey="ph" domain={[0, 10]} stroke={strokeColorsForChart[1]}/>
         </Paper>
+
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Salinity</Text>
-          <Chart data={dataForChart} dataKey="sal" domain={[0, 50]}/>
+          <Chart data={dataForChart} dataKey="sal" domain={[0, 50]} stroke={strokeColorsForChart[2]}/>
         </Paper>
+
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Temperature</Text>
-          <Chart data={dataForChart} dataKey="temp" domain={[0, 40]}/>
+          <Chart data={dataForChart} dataKey="temp" domain={[0, 40]} stroke={strokeColorsForChart[3]}/>
         </Paper>
+
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Total Dissolved Solids</Text>
-          <Chart data={dataForChart} dataKey="tds" domain={[0, 35000]}/>
+          <Chart data={dataForChart} dataKey="tds" domain={[0, 35000]} stroke={strokeColorsForChart[4]}/>
         </Paper>
       </div>
 
