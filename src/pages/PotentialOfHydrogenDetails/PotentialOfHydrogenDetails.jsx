@@ -61,24 +61,24 @@ const PotentialOfHydrogenDetails = () => {
           </Table.Thead>
           <Table.Tbody>
             <Table.Tr>
-              <Table.Th>5-7 mg/L</Table.Th>
-              <Table.Th>Optimal range (best growth and health)</Table.Th>
+              <Table.Td>&lt;6.5</Table.Td>
+              <Table.Td><strong>Highly Dangerous / Acidic</strong>. Causes severe stress, significant osmoregulation problems, and can lead to molting difficulties, weak shells, and direct mortality, especially in prolonged exposure. Inhibits beneficial bacteria.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>4 mg/L</Table.Th>
-              <Table.Th>Minimum survival level (slow growth)</Table.Th>
+              <Table.Td>6.5 - 7.4</Table.Td>
+              <Table.Td><strong>Sub-optimal / Slightly Acidic</strong>. Can lead to chronic stress, reduced growth rate, and increased susceptibility to diseases over time. Mineral availability for shell formation might be reduced.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>&gt;7 mg/L</Table.Th>
-              <Table.Th>May cause stress to shrimp</Table.Th>
+              <Table.Td>7.5 - 8.5</Table.Td>
+              <Table.Td><strong>Optimal Range</strong>. Ideal for healthy growth, efficient osmoregulation, and strong immune function. Promotes good water quality and beneficial microbial activity. Daily fluctuation should ideally not exceed 0.5.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;4</Table.Td>
-              <Table.Td><strong>Dangerous!</strong> (risk of mass mortality)</Table.Td>
+              <Table.Td>8.6 - 9.0</Table.Td>
+              <Table.Td><strong>Slightly Alkaline / High.</strong> Can cause stress, especially if prolonged. May increase the toxicity of ammonia (NH3) in the water, even if total ammonia nitrogen (TAN) levels are moderate. Can lead to reduced feed intake and growth.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;3</Table.Td>
-              <Table.Td><strong>Critical emergency!</strong> (immediate aeration needed)</Table.Td>
+              <Table.Td>&gt; 9.0</Table.Td>
+              <Table.Td><strong>Dangerous / Highly Alkaline.</strong> Severe stress and direct toxicity. Greatly increases the toxicity of unionized ammonia (NH3), leading to gill damage, metabolic disturbances, and mass mortality. Inhibits proper functioning of various biological processes.</Table.Td>
             </Table.Tr>
           </Table.Tbody>
         </Table>

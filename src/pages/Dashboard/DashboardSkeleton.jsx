@@ -61,13 +61,13 @@ export default function DashboardSkeleton() {
                         <tbody>
                             {Array.from({ length: 10 }).map((_, i) => (
                                 <Table.Tr key={i}>
-                                    <Table.Td>Baris {i + 1} - A</Table.Td>
-                                    <Table.Td>Baris {i + 1} - B</Table.Td>
-                                    <Table.Td>Baris {i + 1} - C</Table.Td>
-                                    <Table.Td>Baris {i + 1} - D</Table.Td>
-                                    <Table.Td>Baris {i + 1} - E</Table.Td>
-                                    <Table.Td>Baris {i + 1} - F</Table.Td>
-                                    <Table.Td>Baris {i + 1} - G</Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
+                                    <Table.Td><Skeleton h={20} radius="md"/></Table.Td>
                                 </Table.Tr>
                             ))}
                         </tbody>

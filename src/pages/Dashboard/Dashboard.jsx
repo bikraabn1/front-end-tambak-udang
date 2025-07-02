@@ -13,7 +13,7 @@ import DashboardSkeleton from './DashboardSkeleton';
 export default function Dashboard() {
   const { data } = useContext(DataContext)
 
-  if (!data || data.length === 0) {
+  if (!data || data.length < 10) {
     return <DashboardSkeleton />;
   }
 
@@ -58,7 +58,7 @@ export default function Dashboard() {
 
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Potential of Hydrogen(pH)</Text>
-          <Chart data={dataForChart} dataKey="ph" domain={[0, 14]}/>
+          <Chart data={dataForChart} dataKey="ph" domain={[0, 10]}/>
         </Paper>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Salinity</Text>
@@ -70,7 +70,7 @@ export default function Dashboard() {
         </Paper>
         <Paper p="md" radius="md" withBorder h="100%">
           <Text size="lg" weight={500} mb={6}>Total Dissolved Solids</Text>
-          <Chart data={dataForChart} dataKey="tds" domain={[0, 300]}/>
+          <Chart data={dataForChart} dataKey="tds" domain={[0, 35000]}/>
         </Paper>
       </div>
 

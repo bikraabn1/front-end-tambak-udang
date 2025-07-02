@@ -55,30 +55,30 @@ const TotalDissolvedSolidDetails = () => {
         <Table stripped withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
-              <Table.Th>TotalDissolvedSolid Rate</Table.Th>
+              <Table.Th>Total Dissolved Solid Rate</Table.Th>
               <Table.Th>Impact on Shrimp</Table.Th>
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>
             <Table.Tr>
-              <Table.Th>5-7 mg/L</Table.Th>
-              <Table.Th>Optimal range (best growth and health)</Table.Th>
+              <Table.Td>&lt; 5,000 (or &gt; 5 ppt)</Table.Td>
+              <Table.Td><strong>Dangerous!</strong> (Too low for intensive farming without special treatment). Can lead to osmoregulation problems, slow growth, and increased mortality. Requires supplementation of essential minerals.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>4 mg/L</Table.Th>
-              <Table.Th>Minimum survival level (slow growth)</Table.Th>
+              <Table.Td>5,000 - 9,999 (or 5 - &gt;10 ppt)</Table.Td>
+              <Table.Td>Low Brackish - Fair. Shrimp can survive, but growth may not be as optimal as in higher salinity. Requires good water management and mineral monitoring.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>&gt;7 mg/L</Table.Th>
-              <Table.Th>May cause stress to shrimp</Table.Th>
+              <Table.Td>10,000 - 35,000 (or 10 - 35 ppt)</Table.Td>
+              <Table.Td>Optimal Range (Ideal Brackish - Seawater). Best conditions for optimal growth and health of Vannamei shrimp. Allows for efficient osmoregulation.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;4</Table.Td>
-              <Table.Td><strong>Dangerous!</strong> (risk of mass mortality)</Table.Td>
+              <Table.Td>&gt; 35,000 - 40,000 (or &lt; 35 - 40 ppt)</Table.Td>
+              <Table.Td>Quite High. Shrimp can still tolerate, but may experience some stress. Growth might be slightly inhibited, and energy requirements for osmoregulation increase.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;3</Table.Td>
-              <Table.Td><strong>Critical emergency!</strong> (immediate aeration needed)</Table.Td>
+              <Table.Td>&gt; 40,000 (or &gt; 40 ppt)</Table.Td>
+              <Table.Td><strong>Potentially Dangerous! (Too high)</strong>. Causes significant stress to shrimp, inhibits growth, and increases the risk of disease and mortality.</Table.Td>
             </Table.Tr>
           </Table.Tbody>
         </Table>

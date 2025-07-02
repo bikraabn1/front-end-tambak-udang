@@ -22,7 +22,7 @@ const SalinityDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Salinity Trend
             </Text>
-            <Chart data={dataForChart} dataKey="sal" />
+            <Chart data={dataForChart} dataKey="sal" domain={[0, 50]}/>
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -61,24 +61,32 @@ const SalinityDetails = () => {
           </Table.Thead>
           <Table.Tbody>
             <Table.Tr>
-              <Table.Th>5-7 mg/L</Table.Th>
-              <Table.Th>Optimal range (best growth and health)</Table.Th>
+              <Table.Th>&lt; 1</Table.Th>
+              <Table.Th><strong>Dangerous / Freshwater</strong>. While Vannamei can tolerate very low salinities (even freshwater with proper mineral supplementation and gradual acclimation), prolonged exposure or sudden changes can cause severe osmoregulation stress, poor growth, and high mortality. Requires very careful management and mineral balance.</Table.Th>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>4 mg/L</Table.Th>
-              <Table.Th>Minimum survival level (slow growth)</Table.Th>
+              <Table.Th>1 - 4</Table.Th>
+              <Table.Th><strong>Very Low Salinity</strong>. Possible for cultivation, but growth might be significantly reduced. Requires careful acclimation and sufficient supplementation of essential minerals (K, Ca, Mg) to prevent osmoregulation issues and mortality. Increased susceptibility to certain diseases.</Table.Th>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>&gt;7 mg/L</Table.Th>
-              <Table.Th>May cause stress to shrimp</Table.Th>
+              <Table.Th>5 - 9</Table.Th>
+              <Table.Th><strong>Low Brackish / Sub-optimal</strong>. Acceptable for cultivation, and some studies even show good performance. However, growth may still be slightly less than in optimal ranges. Good management of mineral balance is still important.</Table.Th>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;4</Table.Td>
-              <Table.Td><strong>Dangerous!</strong> (risk of mass mortality)</Table.Td>
+              <Table.Td>10 - 25</Table.Td>
+              <Table.Td><strong>Optimal Range.</strong> Considered ideal for excellent growth, survival, and feed conversion ratio (FCR) for Vannamei shrimp. This range allows efficient osmoregulation with minimal energy expenditure.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;3</Table.Td>
-              <Table.Td><strong>Critical emergency!</strong> (immediate aeration needed)</Table.Td>
+              <Table.Td>26 - 35</Table.Td>
+              <Table.Td><strong>High Brackish / Seawater. </strong> Still very good for Vannamei, as they are naturally marine species. Growth and health are generally excellent. Some studies even suggest slightly higher salinities (e.g., 30-36 ppt) might be optimal for certain growth parameters.</Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>&gt;35 - 40</Table.Td>
+              <Table.Td><strong>Very High Salinity.</strong> Shrimp can survive, but prolonged exposure may lead to increased energy expenditure for osmoregulation, potentially affecting growth rate and increasing stress.</Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>&gt;40</Table.Td>
+              <Table.Td><strong>Dangerous / Extremely High Salinity. </strong> Causes significant physiological stress, reduced growth, and can lead to mass mortality. Inhibits enzyme activity and makes shrimp more susceptible to disease.</Table.Td>
             </Table.Tr>
           </Table.Tbody>
         </Table>

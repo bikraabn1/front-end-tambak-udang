@@ -22,7 +22,7 @@ const TemperatureDetails = () => {
             <Text size="lg" mb={10} weight={500}>
               Temperature Trend
             </Text>
-            <Chart data={dataForChart} dataKey="temp" />
+            <Chart data={dataForChart} dataKey="temp" domain={[0, 40]} />
           </Paper>
           <Paper p="md" radius="md" withBorder className="h-full">
             <Text size="lg" mb={15} weight={700}>
@@ -50,12 +50,8 @@ const TemperatureDetails = () => {
         </div>
       </div>
 
-      <h2 className='font-semibold text-xl mt-25 mb-5 text-white'>What is Temperature?</h2>
-      <p className='bg-zinc-800 rounded-sm p-2'>
-        <span className='m-5'></span><strong>Temperature </strong> is a physical quantity that quantitatively expresses the attribute of hotness or coldness. Temperature is measured with a thermometer.
 
-      </p>
-      <h2 className='font-semibold text-xl my-5 text-white'>Indicator</h2>
+      <h2 className='font-semibold text-xl mt-25 mb-5 text-white'>Indicator</h2>
       <div className='bg-zinc-800 p-2 flex items-center justify-center rounded md'>
         <Table stripped withTableBorder withColumnBorders>
           <Table.Thead>
@@ -66,20 +62,33 @@ const TemperatureDetails = () => {
           </Table.Thead>
           <Table.Tbody>
             <Table.Tr>
-              <Table.Th>25&deg; - 33&deg;</Table.Th>
-              <Table.Th>Optimal range (best growth and health)</Table.Th>
+              <Table.Td>&lt; 20&deg;</Table.Td>
+              <Table.Td><strong>Dangerous / Too Cold.</strong> Significantly reduces metabolic rate, leading to very slow growth, poor feed intake, and increased susceptibility to diseases due to a weakened immune system. Can cause lethargy, stress, and mortality if prolonged.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Th>&gt;32&deg;</Table.Th>
-              <Table.Th><strong>Dangerous!</strong> (Risk of oxygen depletion and stress)</Table.Th>
+              <Table.Td>21&deg; - 24&deg;</Table.Td>
+              <Table.Td><strong>Sub-optimal.</strong> Growth rate will be slow, and feed conversion ratio (FCR) will be higher (less efficient). Shrimp are more prone to stress and disease outbreaks. Feed consumption is reduced.</Table.Td>
             </Table.Tr>
             <Table.Tr>
-              <Table.Td>&lt;25&deg;</Table.Td>
+              <Table.Td>25&deg; - 32&deg;</Table.Td>
+              <Table.Td><strong>Optimal range</strong> (best growth and health)</Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>&gt; 32&deg;</Table.Td>
+              <Table.Td><strong>Dangerous!</strong> (Risk of oxygen depletion and stress)</Table.Td>
+            </Table.Tr>
+            <Table.Tr>
+              <Table.Td>&lt; 25&deg;</Table.Td>
               <Table.Td><strong>Dangerous!</strong> (Shrimp become inactive, stop eating)</Table.Td>
             </Table.Tr>
           </Table.Tbody>
         </Table>
       </div>
+      
+      <h2 className='font-semibold text-xl my-5 text-white'>What is Temperature?</h2>
+      <p className='bg-zinc-800 rounded-sm p-2'>
+        <span className='m-5'></span><strong>Temperature </strong> is a physical quantity that quantitatively expresses the attribute of hotness or coldness. Temperature is measured with a thermometer.
+      </p>
     </>
   )
 }
