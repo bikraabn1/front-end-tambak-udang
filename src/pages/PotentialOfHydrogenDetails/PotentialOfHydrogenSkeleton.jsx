@@ -4,7 +4,7 @@ import { Paper, Text, ScrollArea, Table, Skeleton } from '@mantine/core'
 const PotentialOfHydrogenSkeleton = () => {
   return (
     <>
-      <div className='h-[72.75vh]'>
+      <div className='md:h-full lg:h-[72.75vh]'>
         <h2 className='font-semibold mb-5 text-xl text-white'>Potential of Hydrogen(pH)</h2>
         <div className="grid md:grid-cols-2 mb-12 gap-5">
           <Paper p="md" radius="md" withBorder className="h-full">
@@ -18,7 +18,7 @@ const PotentialOfHydrogenSkeleton = () => {
               Latest Measurements
             </Text>
             <ScrollArea>
-              <Table striped="true" withTableBorder>
+              <Table striped={true} withTableBorder>
                 <Table.Thead>
                   <Table.Tr>
                     <Table.Th>No</Table.Th>
@@ -39,9 +39,9 @@ const PotentialOfHydrogenSkeleton = () => {
         </div>
       </div>
 
-      <h2 className='font-semibold text-xl mt-25 mb-5 text-white'>Indicator</h2>
+      <h2 className='font-semibold text-xl mt-20 mb-5 text-white'>Indicator</h2>
       <div className='bg-zinc-800 p-2 flex items-center justify-center rounded md'>
-        <Table stripped="true" withTableBorder withColumnBorders>
+        <Table withTableBorder withColumnBorders>
           <Table.Thead>
             <Table.Tr>
               <Table.Th>Potential Of Hydrogen Rate</Table.Th>

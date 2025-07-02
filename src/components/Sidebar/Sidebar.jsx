@@ -11,6 +11,7 @@ import { CgGlassAlt } from "react-icons/cg";
 import { TbTemperatureSun } from "react-icons/tb";
 import { MdWater } from "react-icons/md";
 import { useLocation } from 'react-router-dom'
+import { useState } from 'react';
 
 const collections = [
     {
@@ -45,19 +46,21 @@ const collections = [
     },
 ];
 
-export default function Sidebar() {
-    const pathname = useLocation()
-    console.log(pathname)
+export default function Sidebar({onClose}) {
+
+    const location = useLocation()
 
     const collectionLinks = collections.map((collection) => (
         <NavLink
             to={collection.link}
             key={collection.label}
             className={classes.collectionLink}
+            data-active={collection.link === location.pathname || undefined}
+            onClick={onClose}
         >
             <Box component="span" fz={16}>
                 {collection.icon}
-            </Box>{' '}
+            </Box>
             {collection.label}
         </NavLink>
     ));

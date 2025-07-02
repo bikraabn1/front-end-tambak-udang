@@ -46,7 +46,7 @@ export default function DashboardSkeleton() {
             <Paper mt="md" p="md" radius="md" withBorder>
                 <Text size="lg" weight={500} mb="sm">Data Table</Text>
                 <ScrollArea>
-                    <Table striped withTableBorder>
+                    <Table withTableBorder>
                         <Table.Thead>
                             <Table.Tr>
                                 <Table.Th>No</Table.Th>

@@ -89,7 +89,7 @@ export default function Dashboard() {
       <Paper mt="md" p="md" radius="md" withBorder>
         <Text size="lg" weight={500} mb="sm">Stats Table</Text>
         <ScrollArea>
-          <Table striped withTableBorder>
+          <Table striped={true} withTableBorder>
             <Table.Thead>
               <Table.Tr>
                 <Table.Th>No</Table.Th>

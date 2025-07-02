@@ -19,7 +19,7 @@ const MainLayout = () => {
         </AppShell.Header>
 
         <Drawer offset={8} radius="md" opened={opened} onClose={close} overlayProps={{ backgroundOpacity: 0.5, blur: 4 }} scrollAreaComponent={ScrollArea.Autosize}>
-          <Sidebar />
+          <Sidebar onClose={close}/>
         </Drawer>
 
         <AppShell.Main margin={0}>
