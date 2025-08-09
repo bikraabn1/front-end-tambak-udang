@@ -7,7 +7,7 @@ import DissolvedOxygenDetailsSkeleton from './DissolvedOxygenDetailsSkeleton'
 const DissolvedOxygenDetails = () => {
   const { data } = useContext(DataContext)
 
-  if (!data || data.length < 10) {
+  if (!data || data.length < 5) {
     return <DissolvedOxygenDetailsSkeleton />;
   }
 

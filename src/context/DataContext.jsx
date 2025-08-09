@@ -4,7 +4,7 @@ import useWebsocketData from '../hooks/useWebsocketData';
 export const DataContext = createContext(null);
 
 const DataProvider = ({ children }) => {
-  const { data, isConnected, error, reconnect } = useWebsocketData('ws://localhost:5500', 50);
+  const { data, isConnected, error, reconnect } = useWebsocketData(`${import.meta.env.VITE_WS_URL}`, 50);
 
   const doData = data.doValue
 

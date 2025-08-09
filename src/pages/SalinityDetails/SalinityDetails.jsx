@@ -7,7 +7,7 @@ import SalinitySkeleton from './SalinitySkeleton'
 const SalinityDetails = () => {
   const { data } = useContext(DataContext)
 
-  if (!data || data.length < 10) {
+  if (!data || data.length < 5) {
     return <SalinitySkeleton />;
   }
 
